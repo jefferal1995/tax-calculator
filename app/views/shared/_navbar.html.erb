@@ -8,7 +8,10 @@
       <% if current_user.present? %>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <%= link_to "Calculator", root_path, class: "nav-link" %>
+            <%= link_to "Tax calculations", tax_calculations_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Tax rules", tax_rules_path, class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">

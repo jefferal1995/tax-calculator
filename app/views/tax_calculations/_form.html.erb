@@ -1,0 +1,9 @@
+<%= form_with(model: tax_calculation, local: true) do |form| %>
+
+  <div class="form-group">
+    <%= form.label :value %>
+    <%= form.text_field :value, type: 'number', placeholder: 'Value', required: true, class: 'form-control' %>
+  </div>
+
+  <%= form.submit "#{ action_name.capitalize } tax calculation", class: 'btn btn-primary' %>
+<% end %>

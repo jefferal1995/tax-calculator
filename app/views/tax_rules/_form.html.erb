@@ -1,0 +1,18 @@
+<%= form_with(model: tax_rule, local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :min_value %>
+    <%= form.text_field :min_value, type: 'number', required: true, placeholder: 'Minimum value', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :max_value %>
+    <%= form.text_field :max_value, type: 'number', placeholder: 'Maximum value (Leave blank if there is no maximum value)', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :percentage %>
+    <%= form.text_field :percentage, min: 0, max: 100, type: 'number', required: true, placeholder: 'Percentage', class: 'form-control' %>
+  </div>
+
+  <%= form.submit "#{ action_name.capitalize }  tax rule", class: 'btn btn-primary' %>
+<% end %>

@@ -1,0 +1,33 @@
+<h1>Tax calculations</h1>
+
+<%= link_to 'New tax calculation', new_tax_calculation_path, class: 'btn btn-primary' %>
+
+<br /><br />
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Tax amount</th>
+      <th>Rule applied</th>
+      <th>Created at</th>
+      <th>Updated at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tax_calculations.each do |tax_calculation| %>
+      <tr>
+        <td><%= tax_calculation.value %></td>
+        <td><%= tax_calculation.tax_amount.round(2) %></td>
+        <td>Tax of <%= tax_calculation.tax_rule.percentage %>% of the original value</td>
+        <td><%= tax_calculation.created_at %></td>
+        <td><%= tax_calculation.updated_at %></td>
+        <td><%= link_to 'Show', tax_calculation %></td>
+        <td><%= link_to 'Edit', edit_tax_calculation_path(tax_calculation) %></td>
+        <td><%= link_to 'Destroy', tax_calculation, method: :delete, data: { confirm: 'Are you sure to delete this tax calculation?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,4 @@
+<h1>Information of the tax rule</h1>
+<p><b>Minimum value: </b><%= @tax_rule.min_value %></p>
+<p><b>Maximum value: </b><%= @tax_rule.max_value.present? ? tax_rule.max_value : 'Onward' %></p>
+<p><b>Percentage: </b><%= @tax_rule.percentage %></p>

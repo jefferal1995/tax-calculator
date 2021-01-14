@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to the tax calculator</h1>
+    <p class="lead">Here you can start calculating tax amounts from incomes</p>
+    <hr class="my-4">
+    <p>Please follow the following instructions</p>
+    <p>1. Specify some rules in the tax rules section</p>
+    <p>2. You can use the calculator</p>
+    <p class="lead">
+      <% if current_user.present? %>
+        <%= link_to "Get started", tax_rules_url, class: "btn btn-primary btn-lg", role: "button" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary btn-lg", role: "button" %>
+      <% end %>
+    </p>
+  </div>
+</div>
