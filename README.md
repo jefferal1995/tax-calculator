@@ -1,6 +1,6 @@
 # README
 
-##Ruby and Rails versions to run the project
+## Ruby and Rails versions to run the project
 
 - ruby 2.6.3
 - rails 6.0.3.4
