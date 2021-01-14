@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_13_231226) do
+ActiveRecord::Schema.define(version: 2021_01_14_003029) do
+
+  create_table "tax_calculations", force: :cascade do |t|
+    t.float "value"
+    t.float "tax_amount"
+    t.integer "user_id"
+    t.integer "tax_rule_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tax_rule_id"], name: "index_tax_calculations_on_tax_rule_id"
+    t.index ["user_id"], name: "index_tax_calculations_on_user_id"
+  end
+
+  create_table "tax_rules", force: :cascade do |t|
+    t.float "min_value"
+    t.float "max_value"
+    t.float "percentage"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tax_rules_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
