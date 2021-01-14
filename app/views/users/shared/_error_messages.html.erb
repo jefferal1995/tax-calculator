@@ -1,0 +1,11 @@
+<% if resource.errors.any? %>
+  <% messages = [] %>
+  <% resource.errors.full_messages.each do |text_message| %>
+    <% messages << text_message %>
+  <% end %>
+  <% if messages.count > 0 %>
+    <script type="text/javascript">
+      toastr['error']('<%= messages.join(', ') %>');
+    </script>
+  <% end%>
+<% end %>
